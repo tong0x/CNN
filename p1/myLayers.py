@@ -1,3 +1,4 @@
+import numpy as np
 '''
   File name: myLayers.py
   Author:
@@ -12,6 +13,7 @@
 '''
 def Sigmoid(x):
   # TODO
+  y = 1 / ( 1 + np.exp(-x))
   return y
 
 
