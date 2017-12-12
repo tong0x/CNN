@@ -1,4 +1,9 @@
 import numpy as np
+import cv2
+from p1_utils import *
+
+
+#from p1_main import *
 '''
   File name: myLayers.py
   Author:
@@ -12,6 +17,8 @@ import numpy as np
   - Output y: nonlinearized result
 '''
 
+# problem: dying gradient problem
+
 
 def Sigmoid(x):
   # TODO
@@ -24,6 +31,8 @@ def Sigmoid(x):
   - Input x: ndarray 
   - Output y: nonlinearized result
 '''
+
+# Makes model more sparse, deals with dying gradient problem
 
 
 def Relu(x):
@@ -41,7 +50,7 @@ def Relu(x):
 
 
 def L2_loss(pred, gt):
-  # TODO
+  # should be 100x100
   loss = ((pred - gt)**2) / 2
   return loss
 
@@ -62,10 +71,13 @@ def Cross_entropy_loss(pred, gt):
   return loss
 
 
-list_relu = np.array([[1, 2, -1, -5], [-3, -4, -5, -6]])
-relu_y = Sigmoid(list_relu)
-pred = 0.3
-gt = 0.5
-loss = L2_loss(pred, gt)
-print(relu_y)
-print("L2 LOSS ", loss)
+# im = cv2.imread("tong9.jpg")
+# list_relu = np.array([[1, 2, -1, -5], [-3, -4, -5, -6]])
+# sig_y = Sigmoid(list_relu)
+# relu_y = Relu(list_relu)
+# pred = 0.3
+# gt = 0.5
+# loss = L2_loss(pred, gt)
+# print(relu_y)
+# print("L2 LOSS ", loss)
+# Sigmoid_relu_plot([1, 2, 3, 4], [3, 4, 5, 6], sig_y, relu_y)
